@@ -1,5 +1,6 @@
 #include <zed/app.h>
 #include <zed/app/graphics.h>
+#include <zed/platform/d3d11.h>
 
 void app_graphics_input_layout_init() {
 	D3D11_INPUT_ELEMENT_DESC ied[] = {
