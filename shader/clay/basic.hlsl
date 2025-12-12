@@ -29,9 +29,9 @@ ps_input vs( vs_input input ) {
 	ps_input output;
 
 	float4 position_model = float4( input.position.xyz, 1.0 );
-	float4 position_world = mul( position_model,        matrix_world );
-	float4 position_view  = mul( position_world, camera.matrix_view  );
-	float4 position_clip  = mul( position_view , camera.matrix_clip  );
+	float4 position_world = mul( position_model, matrix_world       );
+	float4 position_view  = mul( position_world, camera.matrix_view );
+	float4 position_clip  = mul( position_view,  camera.matrix_clip );
 
 	output.position_world = position_world;
 	output.position_view  = position_view;

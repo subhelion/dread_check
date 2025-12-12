@@ -22,7 +22,7 @@ ps_input vs( vs_input input ) {
 	float4 position_model = float4( input.position, 1.0 );
 	float4 position_world = mul( position_model,        matrix_world );
 	float4 position_view  = mul( position_world, camera.matrix_view  );
-	float4 position_clip  = mul( position_view , camera.matrix_clip  );
+	float4 position_clip  = mul( position_view,  camera.matrix_clip  );
 
 	// output.position_model = position_model;
 	output.position_world = position_world;

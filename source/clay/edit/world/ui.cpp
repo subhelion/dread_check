@@ -17,7 +17,7 @@ void pick() {
 
 	matrix iv = inverse( game.draw.per_frame.camera.matrix_view );
 
-	ray_origin    = mul( ray_origin   , iv );
+	ray_origin    = mul( ray_origin,    iv );
 	ray_direction = mul( ray_direction, iv );
 
 	float3 plane_point  = { 0, floor_i * wall_height, 0 };

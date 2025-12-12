@@ -12,9 +12,9 @@ void clay_gfx_init() {
 	clay.gfx.pass_plane.rs = rasterizer_states.cull_none;
 	zed_mesh_new_plane( clay.gfx.mesh_plane, 6, 6 );
 
-	zed_pass_new( clay.gfx.pass_composite, "data/shader/clay/basic.hlsl" );
-	zed_pass_new( clay.gfx.pass_normals  , "data/shader/clay/debug_normal.hlsl" );
-	zed_pass_new( clay.gfx.pass_wireframe, "data/shader/clay/basic.hlsl" );
+	zed_pass_new( clay.gfx.pass_composite, "data/shader/clay/basic.hlsl"        );
+	zed_pass_new( clay.gfx.pass_normals,   "data/shader/clay/debug_normal.hlsl" );
+	zed_pass_new( clay.gfx.pass_wireframe, "data/shader/clay/basic.hlsl"        );
 
 	clay.gfx.pass_wireframe.rs = rasterizer_states.wireframe;
 
