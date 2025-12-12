@@ -230,8 +230,8 @@ LRESULT CALLBACK app_window_procedure( HWND window, UINT message, WPARAM w_param
 			}
 
 			LRESULT grid[3][3] = {
-				{ HTTOPLEFT   , HTTOP   , HTTOPRIGHT    },
-				{ HTLEFT      , HTCLIENT, HTRIGHT       },
+				{ HTTOPLEFT,    HTTOP,    HTTOPRIGHT    },
+				{ HTLEFT,       HTCLIENT, HTRIGHT       },
 				{ HTBOTTOMLEFT, HTBOTTOM, HTBOTTOMRIGHT },
 			};
 

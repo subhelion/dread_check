@@ -25,8 +25,8 @@ void compile_shader( string file, zed_shader_type type, zed_pass &pass, ID3DBlob
 	int result;
 	ID3DBlob *blob;
 
-	if ( type == shader_type_vs ) result = compile_shader_from_file( file, "vs"   , "vs_4_0", &blob );
-	if ( type == shader_type_gs ) result = compile_shader_from_file( file, "gs"   , "gs_4_0", &blob );
+	if ( type == shader_type_vs ) result = compile_shader_from_file( file, "vs",    "vs_4_0", &blob );
+	if ( type == shader_type_gs ) result = compile_shader_from_file( file, "gs",    "gs_4_0", &blob );
 	if ( type == shader_type_ps ) result = compile_shader_from_file( file, ps_name, "ps_4_0", &blob );
 
 	if ( result ) return;
@@ -145,7 +145,7 @@ void zed_pass_set( zed_pass &pass ) {
 	                      app.graphics.device_context->PSSetSamplers( 0, 3, (ID3D11SamplerState *const *)&sampler_states );
 	if ( pass.native.bs ) app.graphics.device_context->OMSetBlendState( pass.native.bs, 0, 0xffffffff );
 	                      app.graphics.device_context->OMSetDepthStencilState ( app.graphics.dss, 1 );
-	if ( pass.native.ds ) app.graphics.device_context->OMSetDepthStencilState ( pass.native.ds  , 1 );
+	if ( pass.native.ds ) app.graphics.device_context->OMSetDepthStencilState ( pass.native.ds,   1 );
 }
 
 void zed_pass_reset( zed_pass &pass ) {

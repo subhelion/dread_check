@@ -30,7 +30,7 @@ void game_canvas_size() {
 void game_canvas_init() {
 	game_canvas_size();
 
-	zed_canvas_new( canvas_x1, canvas_size.x    , canvas_size.y     );
+	zed_canvas_new( canvas_x1, canvas_size.x,     canvas_size.y     );
 	zed_canvas_new( canvas_x2, canvas_size.x * 2, canvas_size.y * 2 );
 	zed_pass_new( pass_canvas, "data/shader/zed/canvas.hlsl" );
 }

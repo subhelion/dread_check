@@ -134,7 +134,7 @@ void game_draw_hud() {
 			color = 0xffffff;
 		}
 
-		if ( hud.text   ) hud_text( hud.text  , hud.x, hud.y     , align_center, color );
+		if ( hud.text   ) hud_text( hud.text,   hud.x, hud.y,      align_center, color );
 		if ( hud.text_n ) hud_text( hud.text_n, hud.x, hud.y - 20, align_center, player.pad.n ? 0xffcc44 : 0xffffff );
 		if ( hud.text_s ) hud_text( hud.text_s, hud.x, hud.y + 20, align_center, player.pad.s ? 0xffcc44 : 0xffffff );
 		if ( hud.text_w ) hud_text( hud.text_w, hud.x - 70, hud.y, align_center, player.pad.w ? 0xffcc44 : 0xffffff );

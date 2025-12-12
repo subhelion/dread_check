@@ -38,7 +38,7 @@ void game_draw_hud_x( game_player &player, game_hud &hud ) {
 
 	if ( player.torso == torso_none ) hud.text_w = hud.text_e = hud.text_n = hud.text_s = "--";
 
-	hud_text( hud.text  , hud.x, hud.y     , align_center, color );
+	hud_text( hud.text,   hud.x, hud.y,      align_center, color );
 	hud_text( hud.text_n, hud.x, hud.y - 20, align_center, player.pad.n ? 0xffbb22 : 0xffffff );
 	hud_text( hud.text_s, hud.x, hud.y + 20, align_center, player.pad.s ? 0xffbb22 : 0xffffff );
 }

@@ -53,7 +53,7 @@ struct game_menu {
 bool menu_did_back = false;
 int local_player_count = 1;
 char *name_campaign[] = { "Draugb" }; //, "Halo", "Half Life", "Quake", "Marathon", "Doom", "Wolfenstein" };
-char *date_campaign[] = { "2020"   }; //, "2001", "1998"     , "1996" , "1994"    , "1993", "1992"        };
+char *date_campaign[] = { "2020"   }; //, "2001", "1998",      "1996",  "1994",     "1993", "1992"        };
 int menu_campaign_i = 0;
 char *name_chapter[]  = { "Harbor", "Colony", "Frontier", "Wastes", "Tower", "Draugb" };
 int menu_chapter_i  = 0;

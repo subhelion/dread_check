@@ -103,10 +103,10 @@ void zed_draw_rect( float x, float y, float w, float h, uint color = 0 ) {
 }
 
 void zed_draw_rect_empty( float x, float y, float w, float h, uint color = 0, float b = 1 ) {
-	zed_draw_rect( x        , y        , w, b, color );
-	zed_draw_rect( x        , y        , b, h, color );
-	zed_draw_rect( x        , y + h - b, w, b, color );
-	zed_draw_rect( x + w - b, y        , b, h, color );
+	zed_draw_rect( x,         y,         w, b, color );
+	zed_draw_rect( x,         y,         b, h, color );
+	zed_draw_rect( x,         y + h - b, w, b, color );
+	zed_draw_rect( x + w - b, y,         b, h, color );
 }
 
 // todo unused

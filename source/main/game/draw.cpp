@@ -12,18 +12,18 @@
 void game_menu_draw( game_menu &menu );
 
 void game_draw_init() {
-	zed_buffer_new_uniform( data_per_scene , sizeof( game_draw_per_scene  ) );
-	zed_buffer_new_uniform( data_per_frame , sizeof( game_draw_per_frame  ) );
+	zed_buffer_new_uniform( data_per_scene,  sizeof( game_draw_per_scene  ) );
+	zed_buffer_new_uniform( data_per_frame,  sizeof( game_draw_per_frame  ) );
 	zed_buffer_new_uniform( data_per_object, sizeof( game_draw_per_object ) );
-	zed_buffer_new_uniform( data_alpha     , sizeof( game_draw_alpha      ) );
+	zed_buffer_new_uniform( data_alpha,      sizeof( game_draw_alpha      ) );
 
 	uint slot = 0;
 
-	zed_buffer_use_uniform( data_per_scene , slot++ );
-	zed_buffer_use_uniform( data_per_frame , slot++ );
+	zed_buffer_use_uniform( data_per_scene,  slot++ );
+	zed_buffer_use_uniform( data_per_frame,  slot++ );
 	zed_buffer_use_uniform( data_per_object, slot++ );
 	// note slot 3 is buffer_studio
-	zed_buffer_use_uniform( data_alpha     , 4      );
+	zed_buffer_use_uniform( data_alpha, 4 );
 
 	game_draw_vignette_init();
 }

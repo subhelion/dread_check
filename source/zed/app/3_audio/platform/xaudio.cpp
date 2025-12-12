@@ -141,7 +141,7 @@ void zed_load_sound( zed_sound &sound, string path ) {
 	// 	return S_FALSE;
 
 	FindChunk    ( file, fourccFMT, &chunk_size, &chunk_offset );
-	ReadChunkData( file, &wfx     ,  chunk_size,  chunk_offset );
+	ReadChunkData( file, &wfx,       chunk_size,  chunk_offset );
 
 	//fill out the audio data buffer with the contents of the fourccDATA chunk
 	FindChunk( file, fourccDATA, &chunk_size, &chunk_offset );

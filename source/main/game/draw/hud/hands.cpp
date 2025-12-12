@@ -14,7 +14,7 @@ void game_draw_hud_hands( game_player &player, game_hud &hud ) {
 			float x = r.x0 + 80 * i;
 			float y = r.y1 - 20;
 			game_item &item = player.hands.item[i];
-			sprintf( text, item_name[ item.type.i ]    ); hud_text( text, x, y     , align_left, i == player.hands.i ? 0xffcc44 : 0xffffff );
+			sprintf( text, item_name[ item.type.i ]    ); hud_text( text, x, y,      align_left, i == player.hands.i ? 0xffcc44 : 0xffffff );
 			sprintf( text, ammo_name( item.type.ammo ) ); hud_text( text, x, y - 20, align_left, i == player.hands.i ? 0xffcc44 : 0xffffff );
 		}
 	}

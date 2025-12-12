@@ -18,8 +18,8 @@ int frame_time = 0;
 
 void wolf_draw_wall  () { zed_mesh_draw_instanced( mesh_wolf_wall, &data_wolf_grid, 64 * 64 ); }
 void wolf_draw_door_0() { zed_mesh_draw_instanced( mesh_wolf_door, &data_wolf_grid, 64 * 64 ); }
-void wolf_draw_door_1() { zed_mesh_draw_instanced( mesh_quad     , &data_wolf_grid, 64 * 64 ); }
-void wolf_draw_door_2() { zed_mesh_draw_instanced( mesh_cube     , &data_wolf_grid, 64 * 64 ); }
+void wolf_draw_door_1() { zed_mesh_draw_instanced( mesh_quad,      &data_wolf_grid, 64 * 64 ); }
+void wolf_draw_door_2() { zed_mesh_draw_instanced( mesh_cube,      &data_wolf_grid, 64 * 64 ); }
 
 void wolf_draw_sprite() {
 	game.draw.per_object.matrix_world = translate( -0.5, 0, 0 ) * rotate( dtor( game.camera.rotation.x ), dtor( game.camera.rotation.y ), 0 ) * translate( 0.5, 0, 0.5 );
@@ -76,7 +76,7 @@ void wolf_draw_enemy() {
 	}
 
 	zed_buffer_update( data_wolf_enemy, zed_data( enemy_temp ) );
-	zed_mesh_draw_instanced( mesh_quad, &data_wolf_enemy , wolf.enemy_i );
+	zed_mesh_draw_instanced( mesh_quad, &data_wolf_enemy, wolf.enemy_i );
 }
 
 void wolf_draw_pc() {

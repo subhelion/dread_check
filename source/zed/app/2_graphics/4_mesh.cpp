@@ -297,7 +297,7 @@ void zed_mesh_load( zed_mesh &mesh, int id ) {
 	mesh_data.indices  = (uint            *)malloc( mesh_data.count_index  * sizeof( uint            ) );
 
 	memcpy( mesh_data.vertices, data, mesh_data.count_vertex * sizeof( zed_mesh_vertex ) ); data += mesh_data.count_vertex * sizeof( zed_mesh_vertex );
-	memcpy( mesh_data.indices , data, mesh_data.count_index  * sizeof( uint            ) ); data += mesh_data.count_index  * sizeof( uint            );
+	memcpy( mesh_data.indices,  data, mesh_data.count_index  * sizeof( uint            ) ); data += mesh_data.count_index  * sizeof( uint            );
 
 	load_mesh_from_mesh_data( mesh, mesh_data );
 }
@@ -322,7 +322,7 @@ void zed_mesh_draw( zed_mesh &mesh ) {
 	app.graphics.device_context->IASetPrimitiveTopology( (D3D11_PRIMITIVE_TOPOLOGY)mesh.primitive );
 
 	if ( mesh.buffer_index == 0 ) {
-		app.graphics.device_context->Draw( mesh.count_vertex , 0 );
+		app.graphics.device_context->Draw( mesh.count_vertex, 0 );
 	} else {
 		app. graphics.device_context->DrawIndexed( mesh.count_index, 0, 0 );
 	}

@@ -198,10 +198,10 @@ void game_item_sfx_fire( game_item &item ) {
 	}
 }
 
-void game_item_sfx_dry   () { zed_play_sound( sfx_dry          , -30 ); }
-void game_item_sfx_rack  () { zed_play_sound( sfx_shotgun_open , -15 ); }
+void game_item_sfx_dry   () { zed_play_sound( sfx_dry,           -30 ); }
+void game_item_sfx_rack  () { zed_play_sound( sfx_shotgun_open,  -15 ); }
 void game_item_sfx_unrack() { zed_play_sound( sfx_shotgun_close, -15 ); }
-void game_item_sfx_load  () { zed_play_sound( sfx_shotgun_load , -15 ); }
+void game_item_sfx_load  () { zed_play_sound( sfx_shotgun_load,  -15 ); }
 
 void game_item_fire( game_player &player ) {
 	game_item &item = game_player_hands_get_item( player );
@@ -229,7 +229,6 @@ void game_item_fire( game_player &player ) {
 		}
 
 		item.magazine.count -= 1;
-
 		break;
 
 		case item_wi_1897_shotgun:
@@ -242,7 +241,6 @@ void game_item_fire( game_player &player ) {
 		}
 
 		item.chamber = chamber_spent;
-
 		break;
 	}
 
