@@ -2,14 +2,14 @@
 #define field( name, path ) ;
 #endif
 
-field( sfx_menu_choice,     "data/audio/menu_choice.wav"          )
-field( sfx_menu_select,     "data/audio/menu_select.wav"          )
-field( sfx_menu_beep,       "data/audio/menu_beep.wav"            )
-field( sfx_menu_up,         "data/audio/menu_up.wav"              )
-field( sfx_menu_down,       "data/audio/menu_down.wav"            )
-field( sfx_menu_show,       "data/audio/menu_show.wav"            )
-field( sfx_menu_start,      "data/audio/menu_start.wav"           )
-field( sfx_menu_stop,       "data/audio/menu_stop.wav"            )
+field( sfx_menu_choice,     "data/audio/menu/choice.wav"          )
+field( sfx_menu_select,     "data/audio/menu/select.wav"          )
+field( sfx_menu_beep,       "data/audio/menu/beep.wav"            )
+field( sfx_menu_up,         "data/audio/menu/up.wav"              )
+field( sfx_menu_down,       "data/audio/menu/down.wav"            )
+field( sfx_menu_show,       "data/audio/menu/show.wav"            )
+field( sfx_menu_start,      "data/audio/menu/start.wav"           )
+field( sfx_menu_stop,       "data/audio/menu/stop.wav"            )
 field( sfx_land,            "data/audio/player/land_stone.wav"    )
 field( sfx_heartbeat,       "data/audio/player/heartbeat.wav"     )
 field( sfx_knife_deploy,    "data/audio/item/knife_deploy.wav"    )
