@@ -76,10 +76,10 @@ struct int2  { int x, y; };
 
 //
 
-#ifndef zed_mode_debug
-void zed_die() { *(int *)0 = 0xDEAD; }
-#else
+#ifdef zed_mode_debug
 void zed_die() { __debugbreak(); }
+#else
+void zed_die() { *(int *)0 = 0xDEAD; }
 #endif
 
 //
