@@ -494,10 +494,10 @@ void game_menu_main( game_menu &menu, game_menu_signal signal ) {
 				"",
 				"Zachary Alexander",
 				"belimoth",
-				"Code, Design",
+				"Code, Design, Direction",
 				"",
-				"",
-				"",
+				"Ray \"Blambo\" Chen",
+				"Code",
 				"",
 				"",
 
@@ -509,7 +509,7 @@ void game_menu_main( game_menu &menu, game_menu_signal signal ) {
 				"James Murff",
 				"Joseph Silverman",
 				"Peter Queckenstedt",
-				"Ray \"Blambo\" Chen",
+				"",
 				"",
 
 				// "CHARACTER MODELS",
