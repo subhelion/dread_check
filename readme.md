@@ -67,21 +67,18 @@ build
 build debug
 build profile
 build release
-build roblox
 
 # running
 
 run
 run --debug
 run --headless
-run roblox
 
 # publishing
 
 publish
 publish staging
 publish production
-publish roblox
 ```
 
 ## Zed
