@@ -1,8 +1,14 @@
-<p>Prototype for a collaborative&nbsp;survival shooter.&nbsp;<br>Gamepad STRONGLY recommended.</p>
+<p><a href="http://belimoth.itch.io/draugb">ALPHA</a> | <a href="http://subhelion.itch.io/dread-check-bravo">BRAVO</a> | <a href="http://subhelion.itch.io/dread-check">DREAD CHECK</a> | <a href="http://subhelion.itch.io/dread-check-super">SUPER</a></p>
+
+<p>WELCOME TO THE AMERICAN CENTURY OF HUMILIATION</p>
+
+<p>Prototype for a collaborative&nbsp;survival shooter.</p>
+
+<p>Gamepad STRONGLY recommended.</p>
 
 <p>
 <a href="https://itch.io/app"                 >Install the itch app</a><br>
-<a href="http://tinyurl.com/draugb"           >Launch DRAUGB in the itch app</a><br>
+<a href="http://tinyurl.com/draugb"           >Launch DREAD CHECK in the itch app</a><br>
 <a href="http://bsky.app/profile/belimoth.com">Follow on bluesky for development updates that only lie</a><br>
 <a href="https://discord.gg/tABmNbQVz9"       >Join the discord for development updates that only tell the truth</a><br>
 <a href="https://github.com/belimoth/draugb"  >Read the source code on github</a><br>
@@ -11,11 +17,13 @@
 <p><strong>Development</strong></p>
 <pre>
 2010 - designed
-2015 - written
+2015 - written as DRAUGB
 2020 - prototyped movement and controls for 7DFPS 2020
 2021 - more work on movement, submitted to 7DFPS 2021
 2025 - added MAZE level for PROCJAM 2025
 2025 - more work on controls, submitted to 7DFPS 2025
+2026 - renamed to the DREAD CHECK anthology
+2026 - developed SWAT CITY level
 </pre>
 
 <p><a href="https://itch.io/jam/procjam"><strong>PROCJAM 2025</strong></a></p>
@@ -28,7 +36,7 @@
 
 <p>In 2008 Call of Duty: World at War included Zombie Mode as a reward for completing the campaign. CRAUGB asks: what if Treyarch spent the whole budget on that instead? What if they didn't have a budget?</p>
 <p>Between 2009 and 2019 Activision Blizzard published 11 other Call of Duty titles. I didn't play any of these.</p>
-<p>In 2020 I was asked by Infinity Ward "How much will money will you pay to download 100GB of Call of Duty: Warzone? Will you pay nothing? We have your friends already." After much contemplation, DRAUBG answers: in order to play murder online with MY friends I will need to receive an annual salary of $170,000.</p>
+<p>In 2020 I was asked by Infinity Ward "How much will money will you pay to download 100GB of Call of Duty: Warzone? Will you pay nothing? We have your friends already." After much contemplation, DRUABG answers: in order to play murder online with MY friends I will need to receive an annual salary of $170,000.</p>
 <p>In 2023 Microsoft launched its first Microsoft Azure region in occupied Palestine. It includes multiple facilities with availability zones designed to provide internet services to local organizations and their illegal surveillance and apartheid system.</p>
 <p>At some point I played APE OUT, holy shit have you played APE OUT? That's way better than whatever I was trying to do.</p>
 
@@ -36,8 +44,17 @@
 
 <p>"Is multiplayer implemented yet?" No.
 <br>"Is combat implemented yet?" No.
-<br>"What engine do you use?" No.
+<br><a href="https://github.com/belimoth/draugb">"What engine do you use?"</a>
 </p>
+
+<p><strong>Reviews</strong></p>
+
+<p><i>"interesting but ultimately quagmired by the director's fixation on cybernetic vision enhancement and deterioration as a metaphor for developmental and personality disorders"</i><br>4/10</p>
+
+<p><i>"the game keeps giving me tutorials for features and mechanics that don't seem to exist. incomprehensible"</i><br>2/10</p>
+<p><i>"it's okay i guess"</i><br>5/10</p>
+<p><i>"the devlopers that made this know more about guns than they do about game development. weird"</i><br>6/10</p>
+<p><i>"What the fuck did you just fucking say about me, you little bitch? I'll have you know I graduated top of my class in the Navy Seals, and I've been involved in numerous secret raids on Al-Quaeda, and I have over 300 confirmed kills. I am trained in gorilla warfare and I'm the top sniper in the... [see more]"</i><br>0/10</p>
 
 <p><strong>Controls</strong></p>
 
@@ -94,11 +111,11 @@ Jog + Crouch ↔ = Dive + Spin
 Jog + Crouch ↓ = Slide
 Run + Dive + Run = Roll
 --―――――――――――――――――――――――――――――――――――――--
-GEAR
+GEAR - WIP
 --―――――――――――――――――――――――――――――――――――――--
-Gear ↑ = Head item
+Gear ↑ = Head item / Toggle music / Radio
 Gear ↔ = Gear items
-Gear ↓ = Empty hands
+Gear ↓ = Empty hands / Respond to dialog
 --―――――――――――――――――――――――――――――――――――――--
 GUNS
 --―――――――――――――――――――――――――――――――――――――--
@@ -141,10 +158,16 @@ WEAPONS
 --―――――――――――――――――――――――――――――――――――――--
 Winchester Model 1897 Shotgun
 - Rack, reload, unrack to chamber load
+- Chamber loading keeps ADS
 - Hold down the trigger and rack to slam
+- Slamming keeps ADS
 --―――――――――――――――――――――――――――――――――――――--
 United States Model 1917 Revolver
 - Hold down the trigger and rack to fan
+- Fanning drops ADS
+--―――――――――――――――――――――――――――――――――――――--
+Unite States Navy Phalanx MK-15 CIWS
+- TODO
 --―――――――――――――――――――――――――――――――――――――--
 AUTOPAD AND HALFPAD
 --―――――――――――――――――――――――――――――――――――――--
@@ -184,6 +207,8 @@ Use a PS5 controller for trigger haptics
 <a href="https://tresorberlin.bandcamp.com/album/the-residue"                                                                         >THE RESIDUE by manni dee</a><br>
 <a href="https://andrebrattenofficial.bandcamp.com/album/pax-americana"                                                               >PAX AMERICANA by andré bratten</a><br>
 <a href="https://kelpe.bandcamp.com/album/margins"                                                                                    >MARGINS by kelpe</a><br>
+<a href="https://sevdaliza.bandcamp.com/album/shabrang"                                                                               >SHABRANG by sevdaliza</a><br>
+<a href="https://minorscience.bandcamp.com/album/second-language"                                                                     >SECOND LANGUAGE by minor science</a><br>
 </p>
 
 <p>Here's a timeline of some reference games:</p>

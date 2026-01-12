@@ -50,11 +50,11 @@ Jog + Crouch ↔ = Dive + Spin
 Jog + Crouch ↓ = Slide
 Run + Dive + Run = Roll
 --―――――――――――――――――――――――――――――――――――――--
-GEAR
+GEAR - WIP
 --―――――――――――――――――――――――――――――――――――――--
-Gear ↑ = Head item
+Gear ↑ = Head item / Toggle music / Radio
 Gear ↔ = Gear items
-Gear ↓ = Empty hands
+Gear ↓ = Empty hands / Respond to dialog
 --―――――――――――――――――――――――――――――――――――――--
 GUNS
 --―――――――――――――――――――――――――――――――――――――--
@@ -97,10 +97,16 @@ WEAPONS
 --―――――――――――――――――――――――――――――――――――――--
 Winchester Model 1897 Shotgun
 - Rack, reload, unrack to chamber load
+- Chamber loading keeps ADS
 - Hold down the trigger and rack to slam
+- Slamming keeps ADS
 --―――――――――――――――――――――――――――――――――――――--
 United States Model 1917 Revolver
 - Hold down the trigger and rack to fan
+- Fanning drops ADS
+--―――――――――――――――――――――――――――――――――――――--
+United States Navy Phalanx MK-15 CIWS
+- TODO
 --―――――――――――――――――――――――――――――――――――――--
 AUTOPAD AND HALFPAD
 --―――――――――――――――――――――――――――――――――――――--
