@@ -22,7 +22,7 @@ void el_table_assets_row() {
 	self->child_position.x += 16;
 	int y = self->id_in_parent;
 // 	float2 position = self->child_position;
-	clay_ui_text( el_table_assets_get_data( 0, y ), color_fg );
+	clay_ui_text( el_table_assets_get_data( 0, y ), color_clay_fg );
 // 	self->child_position = position;
 
 	el_finish;

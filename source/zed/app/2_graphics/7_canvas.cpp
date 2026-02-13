@@ -65,9 +65,14 @@ void zed_canvas_clear( zed_canvas &canvas ) {
 	app.graphics.device_context->ClearDepthStencilView( canvas.dsv, D3D11_CLEAR_DEPTH, 0, 0 );
 }
 
-// todo
 void zed_canvas_fill( zed_canvas &canvas, uint color_in ) {
-	float color[4] = { 0, 0, 0, 1 };
+	float color[4] = {
+		( ( color_in >> 16 ) & 0xFF ) / 255.0f,
+		( ( color_in >>  8 ) & 0xFF ) / 255.0f,
+		( ( color_in       ) & 0xFF ) / 255.0f,
+		1
+	};
+
 	app.graphics.device_context->ClearRenderTargetView( canvas.rtv, color );
 	app.graphics.device_context->ClearDepthStencilView( canvas.dsv, D3D11_CLEAR_DEPTH, 0, 0 );
 }

@@ -29,7 +29,7 @@ void el_table_view_row() {
 
 	//
 
-	clay_ui_text( el_table_view_get_data( 0, y ), color_fg );
+	clay_ui_text( el_table_view_get_data( 0, y ), color_clay_fg );
 	self->child_position = position;
 
 	//

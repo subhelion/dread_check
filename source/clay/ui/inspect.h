@@ -31,13 +31,13 @@ void el_table_layers_row() {
 	self->child_position.x += 16;
 	int y = self->id_in_parent;
 	float2 position = self->child_position;
-	clay_ui_text( el_table_layers_get_data( 0, y ), color_fg );
+	clay_ui_text( el_table_layers_get_data( 0, y ), color_clay_fg );
 	self->child_position = position;
 // 	self->child_position.x += 200;
 //
 // 	//
 //
-// 	clay_ui_text( el_table_layers_get_data( 1, y ), color_fg );
+// 	clay_ui_text( el_table_layers_get_data( 1, y ), color_clay_fg );
 // 	self->child_position = position;
 
 	el_finish;
@@ -84,7 +84,7 @@ string el_table_inspect_get_data( int x, int y ) {
 void el_table_inspect_head( string text ) {
 	ui_element_step_node *self = ui.data.step_nodes + ui.id_current;
 	self->child_position.x += 16;
-	clay_ui_text( text, color_fg );
+	clay_ui_text( text, color_clay_fg );
 	self->child_position.y += self->child_size.y;
 }
 
@@ -96,10 +96,10 @@ void el_table_inspect_row() {
 	self->child_position.x += 16;
 	int y = self->id_in_parent;
 	float2 position = self->child_position;
-	clay_ui_text( el_table_inspect_get_data( 0, y ), color_fg );
+	clay_ui_text( el_table_inspect_get_data( 0, y ), color_clay_fg );
 	self->child_position = position;
 	self->child_position.x += 200;
-	clay_ui_text( el_table_inspect_get_data( 1, y ), color_fg );
+	clay_ui_text( el_table_inspect_get_data( 1, y ), color_clay_fg );
 	self->child_position = position;
 	self->child_position.y += self->child_size.y;
 
@@ -145,9 +145,9 @@ void el_debug() {
 	el_start;
 	ui_element_step_node *self = ui.data.step_nodes + ui.id_current;
 
-	sprintf( table_buffer, "%f", clay.camera.rotation.x ); clay_ui_text( table_buffer, color_fg ); self->child_position.y += self->child_size.y;
-	sprintf( table_buffer, "%f", clay.camera.rotation.y ); clay_ui_text( table_buffer, color_fg ); self->child_position.y += self->child_size.y;
-	sprintf( table_buffer, "%f", clay.camera.rotation.z ); clay_ui_text( table_buffer, color_fg ); self->child_position.y += self->child_size.y;
+	sprintf( table_buffer, "%f", clay.camera.rotation.x ); clay_ui_text( table_buffer, color_clay_fg ); self->child_position.y += self->child_size.y;
+	sprintf( table_buffer, "%f", clay.camera.rotation.y ); clay_ui_text( table_buffer, color_clay_fg ); self->child_position.y += self->child_size.y;
+	sprintf( table_buffer, "%f", clay.camera.rotation.z ); clay_ui_text( table_buffer, color_clay_fg ); self->child_position.y += self->child_size.y;
 
 	el_finish;
 }

@@ -12,7 +12,7 @@ void el_menu_row( string text ) {
 	self->child_position.x += 16;
 	self->child_position.y += 2;
 
-	clay_ui_text( text, color_fg );
+	clay_ui_text( text, color_clay_fg );
 
 	el_finish;
 }

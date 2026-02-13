@@ -83,12 +83,13 @@ void scene_wolf_draw() {
 
 void game_draw() {
 	switch ( game.scene ) {
-		case scene_game: scene_game_draw(); break;
+		case scene_game: if ( chapter_current == chapter_draugb ) scene_game_draw(); break;
 		case scene_maze: scene_maze_draw(); break;
 		case scene_wolf: scene_wolf_draw(); break;
 	}
 
 	game_draw_set_camera_i game_menu_draw( game.menu[i] );
+
 	game_draw_vignette();
 	zed_clear_stencil();
 	game_draw_hud();

@@ -30,20 +30,28 @@ bool check_hover( int x, int y, int w, int h ) {
 #define game_menu_cb []( game_menu &menu )
 
 void game_menu_label( game_menu &menu, string text, float x, float y ) {
-	if ( menu.signal == game_menu_signal_render ) app_graphics_draw_text_new( text, x, y, color_menu_fg );
+	if ( menu.signal == game_menu_signal_render ) app_graphics_draw_text_new( text, x, y, get_color_fg() );
 }
 
 void game_menu_item( game_menu &menu, string text, float x, float y, game_menu_cb_t action = {} ) {
 	int id = menu.j ++;
 
-	if ( menu.signal == game_menu_signal_render ) app_graphics_draw_text_new( text, x, y, menu.state.x == 0 and menu.state.y == id ? color_menu_fg_active : color_menu_fg );
+	if ( menu.signal == game_menu_signal_render ) app_graphics_draw_text_new( text, x, y, get_color_fg( menu, id )  );
+	if ( menu.signal == game_menu_signal_hover ) if ( check_hover( x, y, app_graphics_text_measure( text ), 20 ) ) { menu.state.x = 0; menu.state.y = id; }
+	if ( menu.signal == game_menu_signal_select and action and menu.state.x == 0 and menu.state.y == id ) action( menu );
+}
+
+void game_menu_item_dread_check( game_menu &menu, string text, float x, float y, bool which, game_menu_cb_t action = {} ) {
+	int id = menu.j ++;
+	if ( chapter_current != chapter_none ) return;
+	if ( menu.signal == game_menu_signal_render ) app_graphics_draw_text_new( text, x, y, get_color_fg( menu, id, which )  );
 	if ( menu.signal == game_menu_signal_hover ) if ( check_hover( x, y, app_graphics_text_measure( text ), 20 ) ) { menu.state.x = 0; menu.state.y = id; }
 	if ( menu.signal == game_menu_signal_select and action and menu.state.x == 0 and menu.state.y == id ) action( menu );
 }
 
 void game_menu_item_int( game_menu &menu, string text, float x, float y, game_menu_cb_t action_left, game_menu_cb_t action_right ) {
 	int id = menu.j ++;
-	if ( menu.signal == game_menu_signal_render ) app_graphics_draw_text_new( text, x, y, menu.state.x == 0 and menu.state.y == id ? color_menu_fg_active : color_menu_fg );
+	if ( menu.signal == game_menu_signal_render ) app_graphics_draw_text_new( text, x, y, get_color_fg( menu, id ) );
 	if ( menu.signal == game_menu_signal_hover ) if ( check_hover( x, y, app_graphics_text_measure( text ), 20 ) ) { menu.state.x = 0; menu.state.y = id; }
 	if ( menu.signal == game_menu_signal_left  and action_left  and menu.state.x == 0 and menu.state.y == id ) action_left ( menu );
 	if ( menu.signal == game_menu_signal_right and action_right and menu.state.x == 0 and menu.state.y == id ) action_right( menu );
@@ -51,6 +59,11 @@ void game_menu_item_int( game_menu &menu, string text, float x, float y, game_me
 
 void game_menu_item_back( game_menu &menu, float x, float y ) {
 	game_menu_item( menu, "Back", x, y, game_menu_cb { game_menu_action_back( menu ); });
+}
+
+void game_menu_item_continue( game_menu &menu, float x, float y ) {
+	game_menu_item( menu, "Continue", x, y, game_menu_cb { game_menu_action_start_game_1p( menu ); });
+	if ( menu.state.x == 0 and menu.state.y == menu.j - 1 ) chapter_set( chapter_continue ); else chapter_set( chapter_none );
 }
 
 void game_menu_item_status( game_menu &menu, float x, float y ) {
@@ -77,7 +90,7 @@ void game_menu_item_face( game_menu &menu, float x, float y, game_menu_cb_t acti
 		zed_draw_image( gfx_face[ roster[ i_static_temp ].face_i ], x + 64 * 0, y );
 
 		if ( menu.state.x == 0 and menu.state.y == id ) {
-			zed_draw_rect_empty( x, y, w, h, menu.state.x == 0 and menu.state.y == id ? color_menu_fg_active : color_menu_fg, 2 );
+			zed_draw_rect_empty( x, y, w, h, get_color_fg( menu, id ), 2 );
 		}
 	}
 
@@ -102,7 +115,7 @@ void game_menu_item_squad( game_menu &menu, float x, float y ) {
 		if ( local_player_count == 4 ) zed_draw_image( gfx_face[ roster[ menu_character_3_i ].face_i ], x + 64 * 3, y );
 
 		if ( menu.state.x == 0 and menu.state.y == id ) {
-			zed_draw_rect_empty( x, y, w, h, menu.state.x == 0 and menu.state.y == id ? color_menu_fg_active : color_menu_fg, 2 );
+			zed_draw_rect_empty( x, y, w, h, get_color_fg( menu, id ), 2 );
 		}
 	}
 
@@ -122,7 +135,7 @@ void game_menu_item_pc( game_menu &menu, float x, float y, float w, float h, gam
 		zed_pass_reset( pass_title );
 
 		if ( menu.state.x == 0 and menu.state.y == id ) {
-			zed_draw_rect_empty( x, y, w, h, menu.state.x == 0 and menu.state.y == id ? color_menu_fg_active : color_menu_fg, 2 );
+			zed_draw_rect_empty( x, y, w, h, get_color_fg( menu, id ), 2 );
 		}
 	}
 

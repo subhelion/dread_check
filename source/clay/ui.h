@@ -13,19 +13,19 @@
 #define el_pad( x, y )  ui_element_set_padding( x, y );
 #define el_bind( x, y ) ui_element_bind( x, y );
 
-void clay_ui_draw_fill( uint color = color_bg ) {
+void clay_ui_draw_fill( uint color = color_clay_bg ) {
 	ui_element_step_node *self = ui.data.step_nodes + ui.id_current;
 	ui.data.draw_nodes[ ui.id_draw++ ] = { self->position, self->size, { 0, 0 }, color };
 }
 
-void clay_ui_draw_empty( uint color = color_bg ) {
+void clay_ui_draw_empty( uint color = color_clay_bg ) {
 	ui_element_step_node *self = ui.data.step_nodes + ui.id_current;
 	ui.data.draw_nodes[ ui.id_draw++ ] = { self->position, self->size, { 0, 0 }, color };
 }
 
 void clay_ui_draw_border() {
 	ui_element_step_node *self = ui.data.step_nodes + ui.id_current;
-	ui.data.draw_nodes[ ui.id_draw++ ] = { self->position, self->size, { 0, 0 }, color_border };
+	ui.data.draw_nodes[ ui.id_draw++ ] = { self->position, self->size, { 0, 0 }, color_clay_border };
 }
 
 void clay_ui_draw_button() {
@@ -38,20 +38,20 @@ void clay_ui_draw_button() {
 	float w = self->size    .x;
 	float h = self->size    .y;
 
-	uint color_el = color_bg;
+	uint color_el = color_clay_bg;
 
 	if ( ui.id_hover == ui.id_current ) {
-		color_el = color_bg_hover;
+		color_el = color_clay_bg_hover;
 
 		if ( ui.id_active == ui.id_current ) {
-			color_el = color_bg_active;
+			color_el = color_clay_bg_active;
 		}
 	}
 
 	ui.data.draw_nodes[ ui.id_draw++ ] = { { x, y }, { w, h }, { 0, 0 }, color_el };
 
 	if ( parent_data->id_target == self->id_in_parent ) {
-		ui.data.draw_nodes[ ui.id_draw++ ] = { { x, y }, { 8, h }, { 0, 0 }, color_active };
+		ui.data.draw_nodes[ ui.id_draw++ ] = { { x, y }, { 8, h }, { 0, 0 }, color_clay_active };
 	}
 }
 
@@ -73,7 +73,7 @@ void el_header( string text ) {
 	el_block;
 	ui_element_set_height( 96 );
 	ui_element_set_padding( 16, 0 );
-	clay_ui_text( text, color_fg );
+	clay_ui_text( text, color_clay_fg );
 	ui_element_finish( id, text );
 }
 

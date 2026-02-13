@@ -134,3 +134,7 @@ void game_menu_roster_recruit() {
 void game_menu_respawn( game_menu &menu ) {
 
 }
+
+void game_menu_adventure_find_refresh() {
+
+}
