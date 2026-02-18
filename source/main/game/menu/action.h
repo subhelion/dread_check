@@ -121,9 +121,8 @@ void game_menu_game_start( game_menu &menu ) {
 }
 
 void toggle_status() {
-	menu_status_offline = ! menu_status_offline;
-
-	if ( menu_status_offline ) { menu_sfx_stop(); } else { menu_sfx_start(); }
+	menu_status_i = ( menu_status_i + 1 ) % 3;
+	// if ( menu_status_offline ) { menu_sfx_stop(); } else { menu_sfx_start(); }
 }
 
 void game_menu_roster_recruit() {

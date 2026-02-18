@@ -13,11 +13,11 @@ enum game_menu_page {
 	game_menu_page_play_action_max,
 
 	game_menu_page_play_adventure,
-	game_menu_page_play_adventure_find,
-	game_menu_page_play_adventure_load,
 	game_menu_page_play_adventure_new,
 	game_menu_page_play_adventure_max,
 
+	game_menu_page_play_adventure_find,
+	game_menu_page_play_adventure_load,
 	game_menu_page_play_adventure_campaign,
 	game_menu_page_play_adventure_chapter,
 
@@ -214,13 +214,19 @@ char *name_chapter[]  = { "Harbor", "Colony", "Frontier", "Wastes", "Tower", "Dr
 int menu_chapter_i  = 0;
 
 int i_static_temp   = 0;
+
 // char *name_privacy[] = { "Public", "Request", "Private", "Offline" };
 char *name_privacy[] = { "Public", "Private", "Offline" };
 int menu_privacy_i  = 0;
+
 char *name_chat[] = { "Any", "Voice", "Text", "None" };
 int menu_chat_i   = 0;
-bool menu_status_offline = 0;
+
+char *name_status[] = { "Online", "LAN", "Offline" };
+int menu_status_i = 0;
+
 int menu_name_0_i = 202;
+
 bool menu_roster_hover = false;
 int menu_roster_hover_i = 0;
 uint menu_roster_page = 0;

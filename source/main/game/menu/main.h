@@ -67,13 +67,13 @@ void game_menu_item_continue( game_menu &menu, float x, float y ) {
 }
 
 void game_menu_item_status( game_menu &menu, float x, float y ) {
-	// game_menu_item( menu, menu_status_offline ? "Status: Offline" : "Status: Online", x, y, game_menu_cb { toggle_status(); });
-
 	if ( true ) {
 		game_menu_label( menu, "Gamepad detected", x, y );
 	} else {
 		game_menu_label( menu, "Gamepad recommended", x, y );
 	}
+
+	game_menu_item( menu, name_status[menu_status_i], x, y + 20, game_menu_cb { toggle_status(); });
 }
 
 void game_menu_item_face( game_menu &menu, float x, float y, game_menu_cb_t action = {} ) {

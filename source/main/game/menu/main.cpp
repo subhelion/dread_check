@@ -96,8 +96,6 @@ void game_menu_main( game_menu &menu, game_menu_signal signal ) {
 			game_menu_item_back  ( menu, x,  0 );
 			game_menu_item_status( menu, x, 20 );
 
-			game_menu_item( menu, "Play offline"  , x, 40, game_menu_cb{} );
-			game_menu_item( menu, "Play on local network", x, 60, game_menu_cb{} );
 		} break;
 
 		case game_menu_page_play_action_channel: {
@@ -192,13 +190,13 @@ void game_menu_main( game_menu &menu, game_menu_signal signal ) {
 			char text_cheats [32]; sprintf( text_cheats,  "Cheats: %i", 0 );
 
 
-			game_menu_item( menu, "Pick Chapter",   x,      40, game_menu_cb { game_menu_push( menu, game_menu_page_play_adventure_campaign );        });
-			game_menu_item( menu, "Random Chapter", x,      60, game_menu_cb { menu_campaign_i = zed_random_get( 0, array_count( name_campaign ) ); chapter_current = zed_random_get( 0, chapter_max );  });
-			game_menu_item( menu, text_privacy,     x, y +  20, game_menu_cb { menu_privacy_i = ( menu_privacy_i + 1 ) % array_count( name_privacy ); });
-		 // game_menu_item( menu, text_chat,        x, y +  40, game_menu_cb { menu_chat_i    = ( menu_chat_i    + 1 ) % array_count( name_chat    ); });
-		 // game_menu_item( menu, text_rules,       x, y +  60 );
-		 // game_menu_item( menu, text_cheats,      x, y +  80 );
-			game_menu_item( menu, "Launch Game",    x, y + 100 );
+			game_menu_item( menu, "Chapter",     x,                                                    60, game_menu_cb { game_menu_push( menu, game_menu_page_play_adventure_campaign );        });
+			game_menu_item( menu, "Random",      x + 320 - app_graphics_text_measure( "Random" ),      60, game_menu_cb { menu_campaign_i = zed_random_get( 0, array_count( name_campaign ) ); chapter_current = zed_random_get( 0, chapter_max );  });
+			game_menu_item( menu, text_privacy,  x,                                               y +  20, game_menu_cb { menu_privacy_i = ( menu_privacy_i + 1 ) % array_count( name_privacy ); });
+		 // game_menu_item( menu, text_chat,     x,                                               y +  40, game_menu_cb { menu_chat_i    = ( menu_chat_i    + 1 ) % array_count( name_chat    ); });
+		 // game_menu_item( menu, text_rules,    x,                                               y +  60 );
+		 // game_menu_item( menu, text_cheats,   x,                                               y +  80 );
+			game_menu_item( menu, "Launch Game", x,                                               y + 100 );
 
 			game_menu_item_back  ( menu, x,  0 );
 			game_menu_item_status( menu, x, 20 );
