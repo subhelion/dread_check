@@ -1,9 +1,0 @@
-#!/bin/bash
-
-[[ $( command -v shellcheck ) ]] || { echo error: shellcheck required; exit 1; }
-
-shellcheck --exclude=SC1091,SC2086 /a/shell/build
-shellcheck --exclude=SC1091,SC2086 /a/shell/run
-shellcheck --exclude=SC1091,SC2086 /a/shell/publish
-
-echo ok

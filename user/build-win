@@ -16,7 +16,7 @@ cd                     /a/null/build/$mode
 
 source msvc.sh
 # rc -nologo -fo main.res a:/code/main.rc
-cl @a:/shell/flag/$mode
+cl @a:/user/flag/$mode
 [[ -f /a/static/manifest.xml ]] || link -nologo /a/null/build/$mode/main.obj -libpath:a:/null/vend/lib -manifest -manifestfile:a:/static/manifest.xml -out:a:/null/build/$mode/dread_check.exe
 mt -nologo -manifest a:/static/manifest.xml -outputresource:a:/null/build/$mode/dread_check.exe;#1
 

@@ -7,9 +7,9 @@ MSYS_NO_PATHCONV=1 subst /d a: | true && subst a: .
 history -c
 export HISTFILE=/a/null/.bash_history
 
-export PATH=/a/shell:$PATH
+export PATH=/a/user:$PATH
 export PATH=/a/null/vcpkg:$PATH
-export PATH=$PATH:/a/shell/msvc
+export PATH=$PATH:/a/user/msvc
 export PATH=$PATH:/a/null/tool
 
 code /a --reuse-window

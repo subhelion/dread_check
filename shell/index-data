@@ -1,9 +1,0 @@
-#!/bin/bash
-
-set -o errexit
-
-[[ $( command -v xxhsum ) ]] || { echo error: xxhsum required; exit 1; }
-
-mkdir --parents /a/shell/index
-find /a/shell/data -type f -print0 | xargs -0 xxhsum | sed "s|A:/null/data/||" > /a/shell/index/data.txt
-code --diff /a/index/data.txt /a/shell/index/data.txt
